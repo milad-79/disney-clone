@@ -1,0 +1,67 @@
+.login{
+    position: relative;
+}
+
+.login-bg{
+    height: 100%;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    
+}
+
+.main-body-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    max-width: 650px;
+    width: 100%;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cta-one{
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.singin-btn{
+    background-color: #0063e5;
+    padding: 16.5px 0;
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.singin-btn:hover{
+    background-color: #0483ee;
+}
+
+.login-text{
+    color: hsla(0, 0%, 95.3%, 1);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    line-height: 1.2rem;
+    margin-top: 10px;
+    text-align: center; 
+}
+
+.cta-two{
+    max-width: 600px;
+    width: 100%;
+    margin-top: 10px;
+}

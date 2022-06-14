@@ -1,0 +1,26 @@
+.header-login{
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background-color: #040714;
+}
+
+
+.logo-login{
+    width: 100px;
+    cursor: pointer;
+}
+
+.login-btn{
+    padding: 6px 11px;
+    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+}
