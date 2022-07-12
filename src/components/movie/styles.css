@@ -67,6 +67,14 @@
     margin-top: 10px;
 }
 
+.movie-inf-buttond-body .play-icon {
+    transition: all .3s;
+}
+
+.movie-inf-buttond-body :hover .play-icon{
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 768px) {
     .movie-by-id-inf{
         left: 50%;

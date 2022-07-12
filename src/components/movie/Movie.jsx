@@ -1,32 +1,36 @@
 import "./styles.css";
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { getMovieById } from "../../store/action";
-import MainNav from "../navbar/main-nav";
+import MainNav from "../navbar/MainNav";
 import React from "react";
+import movieTrailer from "movie-trailer";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MovieById() {
-  const movie = useSelector((state) => state.movie);
-  const dispatch = useDispatch();
-  const { id } = useParams();
+  const movie = JSON.parse(localStorage.getItem('movieDisney'))
 
-  useEffect(() => {
-    dispatch(getMovieById(id));
-  }, [dispatch, id]);
-
+  const getThrailer = async(name) =>{
+    const url = await movieTrailer(name);
+     if(url){
+      window.open(url,'_blank');
+     }else{
+       toast("Sorry this Movie Have't Thrailer !!!",{
+         position: "top-right",
+         theme: "dark"
+       })
+     }
+  }
 
   return (
     <>
       <MainNav/>
-      {movie.moviebyid ? (
+      {movie ? (
         <div className="movie-by-id-body" style={{
-          backgroundImage: `url(${movie.moviebyid.backgroundImg})`,
+          backgroundImage: `url(${movie.backgroundImg})`,
           backgroundPosition: 'center'
         }}>
           <div className="movie-by-id-inf">
             <img
-              src={movie.moviebyid.titleImg}
+              src={movie.titleImg}
               alt=""
               className="img-title-movie-inf"
             />
@@ -36,7 +40,7 @@ function MovieById() {
                 <p>PLAY</p>
               </button>
 
-              <button className="movie-inf-btn-type1 button-black">
+              <button className="movie-inf-btn-type1 button-black" onClick={()=> getThrailer(movie.title)}>
                 <img src="/images/play-icon-white.png" alt=""  className="play-icon"/>
                 <p>TRALER</p>
               </button>
@@ -47,13 +51,14 @@ function MovieById() {
             </div>
 
             <p className="subtitle">
-                {movie.moviebyid.subTitle}
+                {movie.subTitle}
             </p>
 
             <p className="discription">
-                {movie.moviebyid.description}
+                {movie.description}
             </p>
           </div>
+          <ToastContainer/>
         </div>
       ) : null}
     </>

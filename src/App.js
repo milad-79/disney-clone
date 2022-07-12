@@ -1,17 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/home";
-import Login from "./components/login/login";
-import MovieById from "./components/movie";
+import { QueryClient, QueryClientProvider } from "react-query";
+import RoutesComp from "./routes";
+
+const queryClinet = new QueryClient();
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login/>}/>
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/movie/:id" element={<MovieById/>}/>
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClinet}>
+        <RoutesComp/>
+    </QueryClientProvider>
   );
 }
 

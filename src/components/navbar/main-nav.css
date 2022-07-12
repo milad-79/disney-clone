@@ -40,6 +40,14 @@
     font-size: 13px;
 }
 
+.avatar{
+    cursor: pointer;
+    opacity: .9;
+}
+
+.avatar:hover{
+    opacity: 1;
+}
 
 @keyframes menu {
     50%{

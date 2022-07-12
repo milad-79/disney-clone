@@ -1,9 +1,9 @@
-import Silder from '../slider';
-import MainNav from '../navbar/main-nav';
+import Slider from '../slider/Slider';
+import MainNav from '../navbar/MainNav';
 import './styles.css'
-import Companis from '../companis';
-import Movie from '../movies';
+import Companis from '../companis/Companis';
 import React from 'react';
+import MoviesBody from '../movies/MoviesBody';
 
 function Home() {
     return ( 
@@ -12,9 +12,9 @@ function Home() {
             backgroundSize: 'cover'
           }}>
             <MainNav/>
-            <Silder/>
+            <Slider/>
             <Companis/>
-            <Movie/>
+            <MoviesBody/>
         </div>
      );
 }

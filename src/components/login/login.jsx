@@ -1,4 +1,4 @@
-import LoginNav from "../navbar/login-nav";
+import LoginNav from '../navbar/LoginNav';
 import "./login.css";
 import React from "react";
 
